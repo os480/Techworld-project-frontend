@@ -1,0 +1,275 @@
+/* ==========================================
+   Responsive Design & Media Queries
+   ========================================== */
+
+/* ========== BREAKPOINTS ========== */
+/* 
+  Mobile: 0-480px
+  Tablet: 481-768px
+  Desktop Small: 769-1024px
+  Desktop Medium: 1025-1280px
+  Desktop Large: 1281px+
+*/
+
+/* ========== TABLET (768px and below) ========== */
+@media (max-width: 768px) {
+  /* Typography adjustments */
+  h1, .text-5xl {
+    font-size: var(--font-size-4xl);
+  }
+
+  [dir="rtl"] .nav-menu {
+    align-items: flex-end;
+  }
+
+  [dir="rtl"] .header-login-btn {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  h2, .text-4xl {
+    font-size: var(--font-size-3xl);
+  }
+  
+  h3, .text-3xl {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  /* Container adjustments */
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  /* Section spacing */
+  .section {
+    padding: var(--spacing-3xl) 0;
+  }
+  
+  .section-lg {
+    padding: var(--spacing-4xl) 0;
+  }
+  
+  /* Grid adjustments */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Button adjustments */
+  .btn-lg {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-base);
+  }
+  
+  /* Hero section */
+  .hero-content h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-content p {
+    font-size: var(--font-size-base);
+  }
+  
+  /* CTA Banner */
+  .cta-banner {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+  
+  .cta-banner-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .cta-banner-text {
+    font-size: var(--font-size-base);
+  }
+  
+  /* Cards */
+  .card-body {
+    padding: var(--spacing-md);
+  }
+  
+  .service-card,
+  .solution-card {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  [dir="rtl"] .hero-content,
+  [dir="rtl"] .cta-banner-content {
+    text-align: right;
+  }
+}
+
+/* ========== MOBILE (480px and below) ========== */
+@media (max-width: 480px) {
+  /* Typography */
+  h1, .text-5xl {
+    font-size: var(--font-size-3xl);
+  }
+  
+  h2, .text-4xl {
+    font-size: var(--font-size-2xl);
+  }
+  
+  h3, .text-3xl {
+    font-size: var(--font-size-xl);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  /* Container */
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* Section spacing */
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .section-header {
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  /* Buttons */
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Hero section */
+  .hero {
+    min-height: 60vh;
+  }
+  
+  .hero-content h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Service/Solution icons */
+  .service-icon,
+  .solution-icon {
+    width: 56px;
+    height: 56px;
+    font-size: var(--font-size-2xl);
+  }
+  
+  /* Partner cards */
+  .partner-card {
+    height: 120px;
+    padding: var(--spacing-lg);
+  }
+  
+  .partner-logo {
+    max-height: 60px;
+  }
+}
+
+/* ========== DESKTOP SMALL (769px - 1024px) ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .container {
+    max-width: var(--container-md);
+  }
+}
+
+/* ========== DESKTOP MEDIUM (1025px - 1280px) ========== */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .container {
+    max-width: var(--container-lg);
+  }
+}
+
+/* ========== DESKTOP LARGE (1281px+) ========== */
+@media (min-width: 1281px) {
+  .container {
+    max-width: var(--container-xl);
+  }
+}
+
+/* ========== LANDSCAPE ORIENTATION (Mobile/Tablet) ========== */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+  }
+  
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  .header,
+  .footer,
+  .btn,
+  .cta-banner {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: black;
+    background: white;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* ========== REDUCED MOTION ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========== HIGH CONTRAST MODE ========== */
+@media (prefers-contrast: high) {
+  :root {
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-xl: none;
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+  
+  .card {
+    border: 1px solid var(--text-primary);
+  }
+}
+
+/* ========== DARK MODE SUPPORT (Optional) ========== */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles can be added here if needed */
+  /* For now, we're maintaining the light theme */
+}
+
